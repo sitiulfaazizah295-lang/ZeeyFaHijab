@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+body {
+    background-color: #5a4636;
+    color: white;
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(90,70,54,0.95);
+    padding: 25px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    position: relative;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e7dac8;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background: #e7dac8;
+    color: #5a4636 !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background-image: url('new\ bg.jpeg');
+    background-size: cover; 
+    background-position: center top; 
+    background-repeat: no-repeat;
+    
+    /* Membuat container menjadi flexbox */
+    display: flex;
+    /* Menaruh konten tepat di tengah secara horizontal */
+    justify-content: center; 
+    /* Menaruh konten tepat di tengah secara vertikal */
+    align-items: center; 
+    
+    text-align: center; /* Membuat teks di dalam box menjadi rata tengah */
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Overlay agar teks lebih kontras dan mudah dibaca */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Efek gelap transparan */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Lebar maksimal teks */
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    color: #e7dac8;
+    margin-bottom: 20px;
+}
+/* Responsif untuk HP agar wajah tetap proporsional */
+@media (max-width: 768px) {
+    .hero {
+        background-position: 70% top; /* Geser sedikit ke samping di layar kecil */
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* KATALOG */
+.katalog {
+    background: #f4eee8;
+    padding: 80px;
+    text-align: center;
+    color: #4a3b2a;
+}
+
+.katalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.katalog-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.katalog-item:hover {
+    transform: translateY(-8px);
+}
+
+.katalog-item img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.btn-wa {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* CARA ORDER */
+.cara-order {
+    padding: 80px;
+    text-align: center;
+}
+
+.order-list {
+    max-width: 600px;
+    margin: auto;
+}
+
+.order-step {
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* PEMESANAN */
+.pemesanan {
+    background: #e7dac8;
+    color: #4a3b2a;
+    text-align: center;
+    padding: 80px;
+}
+
+.btn-order {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #6b4f34;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* KONTAK */
+.kontak {
+    padding: 80px;
+    text-align: center;
+    background: #f4eee8;
+    color: #4a3b2a;
+}
+
+.kontak h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.kontak-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kontak-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.kontak-item h4 {
+    margin-bottom: 10px;
+    color: #6b4f34;
+}
+
+/* FOOTER */
+.footer {
+    background: #4a3b2a;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar nav a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    .hero {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 48px;
+    }
+    .kontak {
+        padding: 40px 20px;
+    }
+    .katalog, .cara-order, .pemesanan {
+        padding: 40px 20px;
+    }
+}
